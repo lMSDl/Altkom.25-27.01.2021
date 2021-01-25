@@ -43,6 +43,16 @@
   <ItemGroup>
     <Compile Include="Entity.cs" />
     <Compile Include="Gender.cs" />
+    <Compile Include="Inheritance\AreaCalculator.cs" />
+    <Compile Include="Inheritance\Circle.cs" />
+    <Compile Include="Inheritance\IShapeArea.cs" />
+    <Compile Include="Inheritance\Line.cs" />
+    <Compile Include="Inheritance\Qube.cs" />
+    <Compile Include="Inheritance\Rectangle.cs" />
+    <Compile Include="Inheritance\Shape.cs" />
+    <Compile Include="Inheritance\Shape1D.cs" />
+    <Compile Include="Inheritance\Shape2D.cs" />
+    <Compile Include="Inheritance\Shape3D.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Roles.cs" />
