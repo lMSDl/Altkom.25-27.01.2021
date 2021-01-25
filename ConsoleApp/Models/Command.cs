@@ -8,7 +8,7 @@ namespace ConsoleApp.Models
 {
     public class Command
     {
-        public string Action { get; }
+        public CommandTypes Type { get; }
         //public Nullable<int> Parameter { get; }
         public int? Parameter { get; private set; }
 
@@ -18,7 +18,8 @@ namespace ConsoleApp.Models
                 return;
 
             var split = @string.Split(' ');
-            Action = split[0];
+            if (Enum.TryParse<CommandTypes>(split[0], out var commandType))
+                Type = commandType;
 
             if (split.Length > 1)
                 ReadParameter(split[1]);

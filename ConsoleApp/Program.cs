@@ -38,27 +38,27 @@ namespace ConsoleApp
             var input = System.Console.ReadLine();
             var command = new Command(input);
 
-            switch (command.Action)
+            switch (command.Type)
             {
-                case "exit":
+                case CommandTypes.Exit:
                     return false;
 
-                case "add":
+                case CommandTypes.Add:
                     Add();
                     break;
 
-                case "edit":
+                case CommandTypes.Edit:
                     if (command.Parameter.HasValue)
                         Edit(command.Parameter.Value);
                     break;
 
-                case "delete":
+                case CommandTypes.Delete:
                     if(command.Parameter.HasValue)
                         Delete(command.Parameter.Value);
                     break;
 
                 default:
-                    Console.WriteLine("Unknown command");
+                    Console.WriteLine(Properties.Resources.UnknownCommand);
                     System.Console.ReadLine();
                     break;
             }
@@ -85,19 +85,19 @@ namespace ConsoleApp
 
         private static void Edit(Person person)
         {
-            Console.WriteLine("First name:");
+            Console.WriteLine(Properties.Resources.FirstName);
             SendKeys.SendWait(person.FirstName);
             person.FirstName = Console.ReadLine();
 
-            Console.WriteLine("Last name:");
+            Console.WriteLine(Properties.Resources.LastName);
             SendKeys.SendWait(person.LastName);
             person.LastName = Console.ReadLine();
 
-            Console.WriteLine("Gender:");
+            Console.WriteLine(Properties.Resources.Gender);
             SendKeys.SendWait(person.Gender.ToString());
             person.Gender = (Gender)Enum.Parse(typeof(Gender), Console.ReadLine());
 
-            Console.WriteLine("Birth date:");
+            Console.WriteLine(Properties.Resources.BirthDate);
             SendKeys.SendWait(person.BirthDate.ToShortDateString());
             person.BirthDate = DateTime.Parse(Console.ReadLine());
         }
