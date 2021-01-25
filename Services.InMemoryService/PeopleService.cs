@@ -50,7 +50,7 @@ namespace Services.InMemoryService
 
         public bool Delete(int id)
         {
-            Person entity = Read(id);
+            Person entity = InternalRead(id);
             if (entity != null)
             {
                 return _people.Remove(entity);
@@ -59,11 +59,11 @@ namespace Services.InMemoryService
             return false;
         }
 
-        public Person Read(int id)
+        private Person InternalRead(int id)
         {
             Person entity = null;
             int i = 0;
-            while (i < _people.Count || entity == null)
+            while (i < _people.Count && entity == null)
             {
                 Person person = _people[i++];
                 if (person.Id == id)
@@ -72,6 +72,13 @@ namespace Services.InMemoryService
                 }
             }
             return entity;
+        }
+
+        public Person Read(int id)
+        {
+            var entity = InternalRead(id);
+            return (Person)entity.Clone();
+            //return entity.Clone() as Person;
         }
 
         public bool Update(int id, Person entity)

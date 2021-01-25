@@ -25,5 +25,12 @@ namespace Models
         public DateTime BirthDate { get; set; }
         public Gender Gender { get; set; }
 
+        public override string ToString()
+        {
+            //return Id + " " + FirstName + " " + LastName + " " + Gender + " " + BirthDate.ToShortDateString();
+            //return string.Format("{0, -3} {1, -10} {2, -15} {3, -7} {4, -10}", Id, FirstName, LastName, Gender, BirthDate.ToShortDateString());
+            return $"{Id, -3} {FirstName, -10} {LastName, -15} {Gender, -7} {BirthDate.ToShortDateString(), -10}";
+        }
+
     }
 }
