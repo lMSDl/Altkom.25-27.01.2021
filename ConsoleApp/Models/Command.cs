@@ -8,7 +8,7 @@ namespace ConsoleApp.Models
 {
     public class Command
     {
-        public CommandTypes Type { get; }
+        public CommandTypes? Type { get; }
         //public Nullable<int> Parameter { get; }
         public int? Parameter { get; private set; }
 

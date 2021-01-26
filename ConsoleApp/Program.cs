@@ -3,15 +3,10 @@ using Models;
 using Services.InMemoryService;
 using Services.Interfaces;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace ConsoleApp
 {
-    public class Program
+    public partial class Program
     {
         private static IService<Person> Service { get; } = new PeopleService();
 
@@ -81,25 +76,6 @@ namespace ConsoleApp
 
             Edit(person);
             Service.Update(id, person);
-        }
-
-        private static void Edit(Person person)
-        {
-            Console.WriteLine(Properties.Resources.FirstName);
-            SendKeys.SendWait(person.FirstName);
-            person.FirstName = Console.ReadLine();
-
-            Console.WriteLine(Properties.Resources.LastName);
-            SendKeys.SendWait(person.LastName);
-            person.LastName = Console.ReadLine();
-
-            Console.WriteLine(Properties.Resources.Gender);
-            SendKeys.SendWait(person.Gender.ToString());
-            person.Gender = (Gender)Enum.Parse(typeof(Gender), Console.ReadLine());
-
-            Console.WriteLine(Properties.Resources.BirthDate);
-            SendKeys.SendWait(person.BirthDate.ToShortDateString());
-            person.BirthDate = DateTime.Parse(Console.ReadLine());
         }
 
         private static void Delete(int id)
