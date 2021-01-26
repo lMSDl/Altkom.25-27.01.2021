@@ -11,6 +11,8 @@ namespace ConsoleApp.Models
         Add,
         Edit,
         Delete,
+        Export,
+        Import,
         Exit
     }
 }

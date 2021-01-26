@@ -10,6 +10,7 @@ namespace ConsoleApp
     {
         private static IService<Person> Service { get; } = new PeopleService();
 
+        [STAThread]
         public static void Main(string[] args)
         {
             do
@@ -50,6 +51,15 @@ namespace ConsoleApp
                 case CommandTypes.Delete:
                     if(command.Parameter.HasValue)
                         Delete(command.Parameter.Value);
+                    break;
+
+                case CommandTypes.Export:
+                    if (command.Parameter.HasValue)
+                        Export(command.Parameter.Value);
+                    break;
+
+                case CommandTypes.Import:
+                        Import();
                     break;
 
                 default:

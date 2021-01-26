@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,6 +25,12 @@ namespace Models
         public string LastName { get; set; } 
         public DateTime BirthDate { get; set; }
         public Gender Gender { get; set; }
+        public int SomeInt { get; set; }
+
+        public bool ShouldSerializeFirstName()
+        {
+            return Gender != Gender.Male;
+        }
 
         public override string ToString()
         {
