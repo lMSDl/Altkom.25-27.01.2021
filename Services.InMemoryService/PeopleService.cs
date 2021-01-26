@@ -1,6 +1,7 @@
 ﻿using Models;
 using Services.Interfaces;
 using System;
+using System.Linq;
 using System.Collections.Generic;
 
 namespace Services.InMemoryService
@@ -30,14 +31,14 @@ namespace Services.InMemoryService
                 }
             }*/
 
-            //TODO 1
-            foreach (Person person in _people)
+            _idCounter = _people.Max(x => x.Id);
+            /*foreach (Person person in _people)
             {
                 if (person.Id > _idCounter)
                 {
                     _idCounter = person.Id;
                 }
-            }
+            }*/
         }
 
 
@@ -62,9 +63,11 @@ namespace Services.InMemoryService
 
         private Person InternalRead(int id)
         {
-            Person entity = null;
+            //return _people.Where(person => person.Id == id).SingleOrDefault();
+            return _people.SingleOrDefault(person => person.Id == id);
+
+            /*Person entity = null;
             int i = 0;
-            //TODO 2
             while (i < _people.Count && entity == null)
             {
                 Person person = _people[i++];
@@ -73,7 +76,7 @@ namespace Services.InMemoryService
                     entity = person;
                 }
             }
-            return entity;
+            return entity;*/
         }
 
         public Person Read(int id)
@@ -98,13 +101,15 @@ namespace Services.InMemoryService
 
         public IEnumerable<Person> Read()
         {
+            return _people.Select(x => (Person)x.Clone()).ToList();
+            //return _people.Select(x => x.Clone()).Cast<Person>().ToList();
             //TODO 3
-            List<Person> people = new List<Person>();
+            /*List<Person> people = new List<Person>();
             foreach (Person person in _people)
             {
                 people.Add((Person)person.Clone());
             }
-            return people;
+            return people;*/
         }
     }
 }

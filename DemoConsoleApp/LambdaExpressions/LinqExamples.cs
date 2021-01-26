@@ -15,11 +15,11 @@ namespace DemoConsoleApp.LambdaExpressions
         List<Person> students = new List<Person>
         {
             new Person { FirstName = "Adam", LastName = "Adamski", BirthDate = new DateTime(1978, 2, 21), Gender = Gender.Male },
-            new Person { FirstName = "Ewa", LastName = "Ewowska", BirthDate = new DateTime(1990, 1, 1), Gender = Gender.Female  } ,
+            new Person { FirstName = "Ewa", LastName = "Ewowska", BirthDate = new DateTime(2000, 1, 1), Gender = Gender.Female  } ,
             new Person { FirstName = "Adam", LastName = "Ewowska", BirthDate = new DateTime(1978, 2, 21), Gender = Gender.Male },
-            new Person { FirstName = "Ewa", LastName = "Adamska", BirthDate = new DateTime(1990, 1, 1), Gender = Gender.Female  } ,
+            new Person { FirstName = "Ewa", LastName = "Adamska", BirthDate = new DateTime(1994, 1, 1), Gender = Gender.Female  } ,
             new Person { FirstName = "Piotr", LastName = "Adamski", BirthDate = new DateTime(1978, 2, 21), Gender = Gender.Male },
-            new Person { FirstName = "Kamila", LastName = "Ewowska", BirthDate = new DateTime(1990, 1, 1), Gender = Gender.Female  } ,
+            new Person { FirstName = "Kamila", LastName = "Ewowska", BirthDate = new DateTime(1934, 1, 1), Gender = Gender.Female  } ,
     };
 
         public void Test()
@@ -42,7 +42,17 @@ namespace DemoConsoleApp.LambdaExpressions
                 return item;
             }).ToList();
 
+            //TODO wybierz studentów o imieniu Ewa
 
+            //TODO Wybierz studentów urodzonych przed 1990 rokiem
+
+            //TODO wybierz pierwszego studenta, który ma w nazwisku "Adam" i jest kobietą
+
+            //TODO posortuj studentów po nazwisku a następnie o imieniu
+
+            //TODO wybierz datę urodzenia najmłodszej kobiety (ze studentów)
+
+            //TODO podaj średni wiek studentów
 
         }
     }
