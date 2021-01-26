@@ -72,6 +72,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Models\Command.cs" />
     <Compile Include="Models\CommandTypes.cs" />
     <Compile Include="Program.cs" />

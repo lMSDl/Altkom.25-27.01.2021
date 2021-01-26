@@ -1,4 +1,5 @@
-﻿using Models;
+﻿using ConsoleApp.Extensions;
+using Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,6 +33,7 @@ namespace ConsoleApp
             } while (!breakCondition);*/
             var gender = ReadPersonData(Properties.Resources.Gender, person.Gender.ToString(), x => Enum.TryParse<Gender>(x, out _));
             person.Gender = (Gender)Enum.Parse(typeof(Gender), gender);
+            //person.Gender = ReadPersonData<Gender?>(Properties.Resources.Gender, person.Gender.ToString(), x => x.ToGender()).Value;
 
             /*do
             {
@@ -41,13 +43,7 @@ namespace ConsoleApp
                 if (breakCondition = DateTime.TryParse(Console.ReadLine(), out var birthDate))
                     person.BirthDate = birthDate;
             } while (!breakCondition);*/
-            person.BirthDate = ReadPersonData<DateTime?>(Properties.Resources.BirthDate, person.BirthDate.ToShortDateString(),
-                x => {
-                    if (DateTime.TryParse(x, out var birthDate))
-                        return birthDate;
-                    else
-                        return null;
-                }).Value;
+            person.BirthDate = ReadPersonData<DateTime?>(Properties.Resources.BirthDate, person.BirthDate.ToShortDateString(), x => x.ToDateTime()).Value;
         }
 
         private static string ReadPersonData(string label, string currentValue, Func<string, bool> validator = null /*parametr opcjonalny*/)
