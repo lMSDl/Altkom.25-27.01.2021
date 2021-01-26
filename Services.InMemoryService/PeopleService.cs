@@ -30,6 +30,7 @@ namespace Services.InMemoryService
                 }
             }*/
 
+            //TODO 1
             foreach (Person person in _people)
             {
                 if (person.Id > _idCounter)
@@ -63,6 +64,7 @@ namespace Services.InMemoryService
         {
             Person entity = null;
             int i = 0;
+            //TODO 2
             while (i < _people.Count && entity == null)
             {
                 Person person = _people[i++];
@@ -96,6 +98,7 @@ namespace Services.InMemoryService
 
         public IEnumerable<Person> Read()
         {
+            //TODO 3
             List<Person> people = new List<Person>();
             foreach (Person person in _people)
             {
