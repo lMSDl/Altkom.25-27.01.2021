@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services.Interfaces", "Serv
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services.InMemoryService", "Services.InMemoryService\Services.InMemoryService.csproj", "{CA1C3E6B-BC00-44C3-B2A6-28D0B8E888E8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoConsoleApp", "DemoConsoleApp\DemoConsoleApp.csproj", "{C88E31F1-71F6-4CE6-BB73-10F53633BA25}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{CA1C3E6B-BC00-44C3-B2A6-28D0B8E888E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CA1C3E6B-BC00-44C3-B2A6-28D0B8E888E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CA1C3E6B-BC00-44C3-B2A6-28D0B8E888E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C88E31F1-71F6-4CE6-BB73-10F53633BA25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C88E31F1-71F6-4CE6-BB73-10F53633BA25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C88E31F1-71F6-4CE6-BB73-10F53633BA25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C88E31F1-71F6-4CE6-BB73-10F53633BA25}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
