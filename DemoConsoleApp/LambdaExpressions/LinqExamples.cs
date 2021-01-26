@@ -42,18 +42,27 @@ namespace DemoConsoleApp.LambdaExpressions
                 return item;
             }).ToList();
 
-            //TODO wybierz studentów o imieniu Ewa
+            // wybierz studentów o imieniu Ewa
+            var queryResult11 = students.Where(x => x.FirstName == "Ewa").ToList();
 
-            //TODO Wybierz studentów urodzonych przed 1990 rokiem
+            // Wybierz studentów urodzonych przed 1990 rokiem
+            var queryResult12 = students.Where(x => x.BirthDate.Year < 1990).ToList();
 
-            //TODO wybierz pierwszego studenta, który ma w nazwisku "Adam" i jest kobietą
+            // wybierz pierwszego studenta, który ma w nazwisku "Adam" i jest kobietą
+            var quertResult13 = students.Where(x => x.LastName.Contains("Adam") && x.Gender == Gender.Female).FirstOrDefault();
+            var quertResult13_ = students.Where(x => x.LastName.Contains("Adam")).Where(x => x.Gender == Gender.Female).FirstOrDefault();
+            var quertResult13__ = students.Where(x => x.LastName.Contains("Adam")).FirstOrDefault(x => x.Gender == Gender.Female);
 
-            //TODO posortuj studentów po nazwisku a następnie o imieniu
+            // posortuj studentów po nazwisku a następnie o imieniu
+            var queryResult14 = students.OrderBy(x => x.LastName).ThenBy(x => x.FirstName).ToList();
 
-            //TODO wybierz datę urodzenia najmłodszej kobiety (ze studentów)
+            // wybierz datę urodzenia najmłodszej kobiety (ze studentów)
+            var queryResult15 = students.Where(x => x.Gender == Gender.Female).Max(x => x.BirthDate);
+            var queryResult15_ = students.Where(x => x.Gender == Gender.Female).Select(x => x.BirthDate).Max();
 
-            //TODO podaj średni wiek studentów
-
+            // podaj średni wiek studentów
+            var queryResult16 = students.Select(x => DateTime.Today.Year - x.BirthDate.Year).Average();
+            var queryResult1_6 = students.Select(x => DateTime.Today - x.BirthDate).Select(x => new DateTime(x.Ticks).Year).Average();
         }
     }
 }
