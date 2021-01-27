@@ -1,5 +1,6 @@
 ﻿using ConsoleApp.Models;
 using Models;
+using Services.DAL.Services;
 using Services.InMemoryService;
 using Services.Interfaces;
 using System;
@@ -8,7 +9,7 @@ namespace ConsoleApp
 {
     public partial class Program
     {
-        private static IService<Person> Service { get; } = new PeopleService();
+        private static IService<Person> Service { get; } = new CrudService<Person>(); // new PeopleService();
 
         [STAThread]
         public static void Main(string[] args)

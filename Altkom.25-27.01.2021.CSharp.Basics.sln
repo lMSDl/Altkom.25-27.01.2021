@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services.InMemoryService", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoConsoleApp", "DemoConsoleApp\DemoConsoleApp.csproj", "{C88E31F1-71F6-4CE6-BB73-10F53633BA25}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services.DAL", "Services.DAL\Services.DAL.csproj", "{FBAA90BC-5114-4CAF-B655-D0FF33BA6A3C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{C88E31F1-71F6-4CE6-BB73-10F53633BA25}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C88E31F1-71F6-4CE6-BB73-10F53633BA25}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C88E31F1-71F6-4CE6-BB73-10F53633BA25}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FBAA90BC-5114-4CAF-B655-D0FF33BA6A3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBAA90BC-5114-4CAF-B655-D0FF33BA6A3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBAA90BC-5114-4CAF-B655-D0FF33BA6A3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBAA90BC-5114-4CAF-B655-D0FF33BA6A3C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
