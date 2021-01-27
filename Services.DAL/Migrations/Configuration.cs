@@ -11,6 +11,7 @@ namespace Services.DAL.Migrations
     {
         public Configuration()
         {
+            AutomaticMigrationsEnabled = false; //!!!!!
             ContextKey = typeof(Context).FullName;
         }
     }
