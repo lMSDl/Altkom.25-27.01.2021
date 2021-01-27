@@ -26,6 +26,7 @@ namespace WpfApp
     public partial class MainWindow : Window, INotifyPropertyChanged
     {
         private ObservableCollection<Person> people;
+        private Person selectedPerson;
 
         private IServiceAsync<Person> Service { get; } = new CrudServiceAsync<Person>();
         public MainWindow()
@@ -43,13 +44,20 @@ namespace WpfApp
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(People)));
             }
         }
-        public Person SelectedPerson { get; set; }
+        public Person SelectedPerson
+        {
+            get => selectedPerson; set
+            {
+                selectedPerson = value;
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(SelectedPerson)));
+            }
+        }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
         private async void Refresh_Click(object sender, RoutedEventArgs e)
         {
-            People = new ObservableCollection<Person> ( await Service.ReadAsync() );
+            People = new ObservableCollection<Person>(await Service.ReadAsync());
         }
         private async void Edit_Click(object sender, RoutedEventArgs e)
         {

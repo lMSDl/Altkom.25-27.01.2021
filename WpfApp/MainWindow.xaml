@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp"
-        xmlns:properties="clr-namespace:WpfApp.Properties"
+        xmlns:properties="clr-namespace:WpfApp.Properties" xmlns:converters="clr-namespace:WpfApp.Converters"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
 
@@ -29,7 +29,7 @@
         <StackPanel Orientation="Horizontal" Grid.Row="1">
             <Button Content="{x:Static properties:Resources.Refresh}" Click="Refresh_Click"/>
             <!--TODO Zastąpić "Edit" wykorzystując zasoby-->
-            <Button Content="Edit" Click="Edit_Click"/>
+            <Button Content="Edit" Click="Edit_Click" IsEnabled="{Binding SelectedPerson, Converter={converters:NullableToBoolConverter}}"/>
             <!--TODO Dodać przyscik Delete i obsłużyć zdarzenie click-->
             <!--TODO Dodać przyscik Add i obsłużyć zdarzenie click-->
         </StackPanel>
