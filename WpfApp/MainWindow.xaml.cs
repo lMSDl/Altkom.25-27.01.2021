@@ -58,5 +58,7 @@ namespace WpfApp
 
             await Service.UpdateAsync(SelectedPerson.Id, SelectedPerson);
         }
+
+        //TODO dodać obsługę zdarzeń DELETE i ADD
     }
 }

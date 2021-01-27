@@ -103,7 +103,6 @@ namespace Services.InMemoryService
         {
             return _people.Select(x => (Person)x.Clone()).ToList();
             //return _people.Select(x => x.Clone()).Cast<Person>().ToList();
-            //TODO 3
             /*List<Person> people = new List<Person>();
             foreach (Person person in _people)
             {

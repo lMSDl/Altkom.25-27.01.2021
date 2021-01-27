@@ -28,7 +28,10 @@
 
         <StackPanel Orientation="Horizontal" Grid.Row="1">
             <Button Content="{x:Static properties:Resources.Refresh}" Click="Refresh_Click"/>
+            <!--TODO Zastąpić "Edit" wykorzystując zasoby-->
             <Button Content="Edit" Click="Edit_Click"/>
+            <!--TODO Dodać przyscik Delete i obsłużyć zdarzenie click-->
+            <!--TODO Dodać przyscik Add i obsłużyć zdarzenie click-->
         </StackPanel>
         
     </Grid>

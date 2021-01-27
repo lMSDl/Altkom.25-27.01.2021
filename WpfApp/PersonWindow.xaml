@@ -9,6 +9,8 @@
         Title="PersonWindow" Height="450" Width="800">
 
     <StackPanel>
+        <!--TODO dodać kontrolki do wypełniania imienia-->
+        <!--TODO wykorzystać zasoby zamiast hardcodowania-->
         <Label Content="Last name"></Label>
         <TextBox Text="{Binding Person.LastName}"/>
         <Label Content="Birth date"></Label>
