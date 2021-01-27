@@ -1,5 +1,6 @@
 ﻿using ConsoleApp.Extensions;
 using Models;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,8 +12,45 @@ namespace ConsoleApp
 {
     public partial class Program
     {
+        private static void AutoEdit(Person person)
+        {
+            person.GetType().GetProperties()
+                .Where(x => x.CanWrite && x.CanWrite)
+                .Where(x => !x.GetCustomAttributes(true).Any(att => att is JsonIgnoreAttribute))
+                .ToList()
+                .ForEach(x =>
+            {
+                Func<string, object> converter;
+                var value = x.GetValue(person);
+                switch(x.PropertyType.Name)
+                {
+                    case "String":
+                        converter = @string => @string;
+                        break;
+
+                    case "DateTime":
+                        converter = @string => @string.ToDateTime();
+                        value = ((DateTime)value).ToShortDateString(); 
+                        break;
+
+                    case "Gender":
+                        converter = @string => @string.ToGender();
+                        break;
+
+                    default:
+                        return;
+
+                }
+                x.SetValue(person, ReadPersonData(Properties.Resources.ResourceManager.GetString(x.Name), value?.ToString(), converter));
+            });
+
+        }
+
         private static void Edit(Person person)
         {
+            //AutoEdit(person);
+            //return;
+
             /*Console.WriteLine(Properties.Resources.FirstName);
             SendKeys.SendWait(person.FirstName);
             person.FirstName = Console.ReadLine();*/

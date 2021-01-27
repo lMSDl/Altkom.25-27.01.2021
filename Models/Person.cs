@@ -26,6 +26,8 @@ namespace Models
         public DateTime BirthDate { get; set; }
         public Gender Gender { get; set; }
         public int SomeInt { get; set; }
+        public string Address { get; set; }
+        public DateTime NamedayDate { get; set; }
 
         public bool ShouldSerializeFirstName()
         {

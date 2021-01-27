@@ -61,6 +61,15 @@ namespace ConsoleApp.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Address.
+        /// </summary>
+        internal static string Address {
+            get {
+                return ResourceManager.GetString("Address", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to All files.
         /// </summary>
         internal static string AllFiles {
@@ -102,6 +111,15 @@ namespace ConsoleApp.Properties {
         internal static string LastName {
             get {
                 return ResourceManager.GetString("LastName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nameday date.
+        /// </summary>
+        internal static string NamedayDate {
+            get {
+                return ResourceManager.GetString("NamedayDate", resourceCulture);
             }
         }
         

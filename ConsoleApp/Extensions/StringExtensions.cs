@@ -21,9 +21,11 @@ namespace ConsoleApp.Extensions
         public static Gender? ToGender(this string @string)
         {
             if (Enum.TryParse<Gender>(@string, out var gender))
-                return gender;
-            else
-                return null;
+            {
+                if(Enum.IsDefined(typeof(Gender), gender))
+                    return gender;
+            }
+            return null;
         }
     }
 }
