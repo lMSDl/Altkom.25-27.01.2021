@@ -7,7 +7,24 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
 
-    <DockPanel >
+    <DockPanel Background="Gray">
+        <TextBox DockPanel.Dock="Bottom" Margin="10">EditBox</TextBox>
+        <TextBox DockPanel.Dock="Top" Margin="10">EditBox</TextBox>
+        <Grid Background="DarkGray" Margin="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button Background="Azure" Margin="10" Grid.Column="0">Button</Button>
+            <StackPanel Background="White" Margin="10" Grid.Column="1" VerticalAlignment="Center">
+                <Label Background="Red" Margin="10">Label</Label>
+                <Label Background="Green" Margin="10">Label</Label>
+                <Label Background="Blue" Margin="10">Label</Label>
+            </StackPanel>
+        </Grid>
+    </DockPanel>
+    
+    <!--<DockPanel >
 
         <Button DockPanel.Dock="Bottom">Dock Bottom</Button>
         <Button DockPanel.Dock="Left">Dock Left</Button>
@@ -48,9 +65,9 @@
             <Button>Stack Button</Button>
             <Button>Stack Button</Button>
         </StackPanel>
-        <WrapPanel Orientation="Vertical"  DockPanel.Dock="Right">
+        <WrapPanel Orientation="Vertical"  DockPanel.Dock="Right" Margin="10">
             <Button>Wrap Button</Button>
-            <Button>Wrap Button</Button>
+            <Button Background="Red">Wrap Button</Button>
             <Button>Wrap Button</Button>
             <Button>Wrap Button</Button>
             <Button>Wrap Button</Button>
@@ -64,6 +81,6 @@
 
         </Canvas>
         
-    </DockPanel>
+    </DockPanel>-->
 
 </Window>
