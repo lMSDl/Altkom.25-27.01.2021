@@ -1,5 +1,6 @@
 ﻿using DemoConsoleApp.Delegates;
 using DemoConsoleApp.LambdaExpressions;
+using DemoConsoleApp.SOLID;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,7 +25,17 @@ namespace DemoConsoleApp
             new LambdaExamples().Test();
             new LinqExamples().Test();
 
+            //CalcRectabgleArea(new SOLID.L.Square(), 5, 3);
+
             Console.ReadLine();
+        }
+
+        private static void CalcRectabgleArea(SOLID.L.Rectangle rectangle, int a, int b)
+        {
+            rectangle.A = a;
+            rectangle.B = b;
+
+            Console.WriteLine($"{a} * {b} = {rectangle.Area}" );
         }
     }
 }

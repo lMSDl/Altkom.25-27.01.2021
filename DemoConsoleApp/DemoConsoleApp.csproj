@@ -51,6 +51,12 @@
     <Compile Include="LambdaExpressions\LinqExamples.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SOLID\III_L_2.cs" />
+    <Compile Include="SOLID\III_L.cs" />
+    <Compile Include="SOLID\II_O.cs" />
+    <Compile Include="SOLID\IV_I.cs" />
+    <Compile Include="SOLID\I_S.cs" />
+    <Compile Include="SOLID\V_D.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -61,5 +67,6 @@
       <Name>Models</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

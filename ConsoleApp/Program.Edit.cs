@@ -46,8 +46,17 @@ namespace ConsoleApp
 
         }
 
+        /*private static void Edit(Address address)
+        {
+            address.Street = ReadPersonData(Properties.Resources.Street, address.Street);
+            ....
+        }*/
+
         private static void Edit(Person person)
         {
+            //Edit(person.Address);
+            //person.Address.Street = ReadPersonData(Properties.Resources.Street, person.Address.Street);
+
             //AutoEdit(person);
             //return;
 
