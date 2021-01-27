@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:WpfApp"
         xmlns:properties="clr-namespace:WpfApp.Properties" xmlns:converters="clr-namespace:WpfApp.Converters"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800"
+        Loaded="Refresh_Click">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -28,10 +29,9 @@
 
         <StackPanel Orientation="Horizontal" Grid.Row="1">
             <Button Content="{x:Static properties:Resources.Refresh}" Click="Refresh_Click"/>
-            <!--TODO Zastąpić "Edit" wykorzystując zasoby-->
-            <Button Content="Edit" Click="Edit_Click" IsEnabled="{Binding SelectedPerson, Converter={converters:NullableToBoolConverter}}"/>
-            <!--TODO Dodać przyscik Delete i obsłużyć zdarzenie click-->
-            <!--TODO Dodać przyscik Add i obsłużyć zdarzenie click-->
+            <Button Content="{x:Static properties:Resources.Edit}" Click="Edit_Click" IsEnabled="{Binding SelectedPerson, Converter={converters:NullableToBoolConverter}}"/>
+            <Button Content="{x:Static properties:Resources.Add}" Click="Add_Click"/>
+            <Button Content="{x:Static properties:Resources.Delete}" Click="Delete_Click" IsEnabled="{Binding SelectedPerson, Converter={converters:NullableToBoolConverter}}"/>
         </StackPanel>
         
     </Grid>

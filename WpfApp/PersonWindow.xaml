@@ -5,17 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp"
         xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        xmlns:properties="clr-namespace:WpfApp.Properties" 
         mc:Ignorable="d"
         Title="PersonWindow" Height="450" Width="800">
 
     <StackPanel>
-        <!--TODO dodać kontrolki do wypełniania imienia-->
-        <!--TODO wykorzystać zasoby zamiast hardcodowania-->
-        <Label Content="Last name"></Label>
+        <Label Content="{x:Static properties:Resources.FirstName}"></Label>
+        <TextBox Text="{Binding Person.FirstName}"/>
+        <Label Content="{x:Static properties:Resources.LastName}"></Label>
         <TextBox Text="{Binding Person.LastName}"/>
-        <Label Content="Birth date"></Label>
+        <Label Content="{x:Static properties:Resources.BirthDate}"></Label>
         <DatePicker SelectedDate="{Binding Person.BirthDate}"/>
-        <Label Content="Gender"></Label>
+        <Label Content="{x:Static properties:Resources.Gender}"></Label>
         <ComboBox SelectedItem="{Binding Person.Gender}"
                   ItemsSource="{Binding GenderItemsSource}"/>
 

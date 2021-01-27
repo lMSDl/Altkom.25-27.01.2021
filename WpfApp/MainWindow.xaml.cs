@@ -67,6 +67,19 @@ namespace WpfApp
             await Service.UpdateAsync(SelectedPerson.Id, SelectedPerson);
         }
 
-        //TODO dodać obsługę zdarzeń DELETE i ADD
+        private async void Add_Click(object sender, RoutedEventArgs e)
+        {
+            var person = new Person();
+            var dialog = new PersonWindow(person);
+            dialog.ShowDialog();
+
+            person.Id = await Service.CreateAsync(person);
+            People.Add(person);
+        }
+        private async void Delete_Click(object sender, RoutedEventArgs e)
+        {
+            await Service.DeleteAsync(SelectedPerson.Id);
+            People.Remove(SelectedPerson);
+        }
     }
 }
