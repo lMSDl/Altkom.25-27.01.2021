@@ -1,0 +1,21 @@
+﻿<Window x:Class="WpfApp.PersonWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        mc:Ignorable="d"
+        Title="PersonWindow" Height="450" Width="800">
+
+    <StackPanel>
+        <Label Content="Last name"></Label>
+        <TextBox Text="{Binding Person.LastName}"/>
+        <Label Content="Birth date"></Label>
+        <DatePicker SelectedDate="{Binding Person.BirthDate}"/>
+        <Label Content="Gender"></Label>
+        <ComboBox SelectedItem="{Binding Person.Gender}"
+                  ItemsSource="{Binding GenderItemsSource}"/>
+
+    </StackPanel>
+</Window>

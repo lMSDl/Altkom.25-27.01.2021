@@ -39,7 +39,6 @@ namespace Services.DAL.Services
             using (var context = new Context())
             {
                 var entities = await context.Set<T>().ToListAsync();
-                await Task.Delay(5000);
                 return entities;
             }
         }
